@@ -1,0 +1,28 @@
+import time
+
+# Definición de la función de ordenación de burbuja
+def ord_burbuja(arreglo):
+    n = len(arreglo)
+    
+    # Bucle externo para controlar el número de pasadas
+    for i in range(n-1):
+        # Bucle interno para comparar y realizar intercambios
+        for j in range(n-1-i):
+            if arreglo[j] > arreglo[j+1]:
+                arreglo[j], arreglo[j+1] = arreglo[j+1], arreglo[j]  # Intercambio de elementos si están en el orden incorrecto
+
+# Lista de elementos para ordenar
+elementos = [5, 2, 6, 1, 3]
+
+# Medición del tiempo de inicio de la ejecución
+tiempo_inicial = time.time()
+
+# Llamar a la función de ordenación de burbuja
+ord_burbuja(elementos)
+
+# Medición del tiempo de finalización de la ejecución
+tiempo_final = time.time()
+
+# Imprimir la lista ordenada y el tiempo de ejecución
+print("Elementos ordenados:", elementos)
+print("Tiempo de ejecución:", tiempo_final - tiempo_inicial)
